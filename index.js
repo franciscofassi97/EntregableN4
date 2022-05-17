@@ -6,10 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", routerProductos);
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/Public/index.html");
-});
+app.use(express.static("public"));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
